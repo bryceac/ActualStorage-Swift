@@ -49,7 +49,7 @@ This will produce an executable called <strong>actual</strong> that will run on 
 
 <pre>
 ./actual
-<pre>
+</pre>
 
 in the folder.
 
