@@ -1,7 +1,11 @@
 '''Name:''' Actual Storage
+
 '''Version:''' 0.1
+
 '''Creator:''' Bryce Campbell
-'''License:''' See License
+
+'''License:''' See LICENSE
+
 '''Description:''' Port of mobile app to CLI environment that can tell the user how much storage is usable on a secondary storage medium (e.g. HDD/SSD, USBs, and Optical media).
 
 ==Notes==
