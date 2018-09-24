@@ -3,6 +3,7 @@ import Foundation // import base class so that everything works
 let file = Bundle.main.path(forResource: "units", ofType: "json") // retrieve json file for loading
 var units: Units!, size: Int = 0, unit: Int = 0 // create variables to hold storage object and data to use for calculation
 
+// function to get integer string
 func numbersInString(_ string: String) -> String {
     var number = ""
     for char in string {
@@ -68,7 +69,7 @@ if (CommandLine.argc < 2) {
 
             // loop through unit array and match it with the proper unit of measure
             for measure in units.units {
-                if (CommandLine.arguments[1].contains(measure) || CommandLine.arguments[1].contains(measure.prefix(1))) {
+                if (CommandLine.arguments[1].suffix(2).caseInsensitiveCompare(measure) == .orderedSame || CommandLine.arguments[1].suffix(1).caseInsensitiveCompare(measure.prefix(1)) == .orderedSame) {
                     unit = units.units.index(of: measure) ?? 0
                     unit += 1
                 }
