@@ -30,6 +30,7 @@ The calculations are most accurate for external devices and will not take filesy
 <dd><p>While I would like to have one for this program, it will be a very long time before I am even tempted.</p> 
 <p>Right now, I can dig up info on providing an X11 interface, which will work on Macs and Ubuntu, but I would like to have one GUI for all platforms, and that is not possible with Swift at this time.</p>
 <p>If things change, I might look into things further, but chances are greater that I will update my iOS code with the use of JSON rather than hard coding.</p>
+</dd>
 </dl>
 </li>
 </ol>
@@ -61,13 +62,13 @@ When running the program, you will be greeted with a prompt that asks for storag
 If you do not want go through this interactive mode and/or want to provide everything upfront, the following patterns should work:
 
 <pre>
-./actual <em>storage capacity</em> <em>unit<em>
+./actual (storage capacity) (unit)
 </pre>
 
 either single character or two letter abbreviation will work for units, and case should not matter.
 
 <pre>
-./actual <em>storage capacity</em><em>unit</em>
+./actual (storage capacity)(unit)
 </pre>
 
 Same as above, and was implemented in case one forgets to add in a space.
@@ -75,6 +76,8 @@ Same as above, and was implemented in case one forgets to add in a space.
 Two letter abbreviation is the max length and storage capacity <strong>must</strong> be a numerical value.
 
 Any more than two letter will cause problems with program logic, and I do not plan to allow full wording of each unit, though it is possible to add it in.
+
+Do not include parenthesis that are seen in patterns, as they are only used to help demonstrate the pattern better and will not work.
 
 ===Support===
 
