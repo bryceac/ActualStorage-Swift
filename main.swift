@@ -3,19 +3,6 @@ import Foundation // import base class so that everything works
 let file = Bundle.main.path(forResource: "units", ofType: "json") // retrieve json file for loading
 var units: Units!, size: Int = 0, unit: Int = 0 // create variables to hold the units of measure from JSON and data to use for calculation
 
-// function to get integer string
-func numbersInString(_ string: String) -> String {
-    var number = "" // variable to contain numerical characters
-
-    // the following loop goes through each character in a string and saves them to a new string
-    for char in string {
-        if Int(String(char)) != nil {
-            number += String(char)
-        }
-    }
-    return number // return a string with just numbers in it.
-}
-
 // check if file exists and load it
 if (file != nil) {
     do {
