@@ -1,17 +1,19 @@
 import Foundation // import base class so that everything works
 
 let file = Bundle.main.path(forResource: "units", ofType: "json") // retrieve json file for loading
-var units: Units!, size: Int = 0, unit: Int = 0 // create variables to hold storage object and data to use for calculation
+var units: Units!, size: Int = 0, unit: Int = 0 // create variables to hold the units of measure from JSON and data to use for calculation
 
 // function to get integer string
 func numbersInString(_ string: String) -> String {
-    var number = ""
+    var number = "" // variable to contain numerical characters
+
+    // the following loop goes through each character in a string and saves them to a new string
     for char in string {
         if Int(String(char)) != nil {
             number += String(char)
         }
     }
-    return number
+    return number // return a string with just numbers in it.
 }
 
 // check if file exists and load it
@@ -50,13 +52,14 @@ if (CommandLine.argc < 2) {
             let idx = CommandLine.arguments.index(where: { $0.caseInsensitiveCompare(argument) == .orderedSame }) // get index of argument, to make sure it is not first argument
 
             if (numbersInString(argument).count > 0 && idx != 0) {
-                size = Int(numbersInString(argument)) ?? 0
+                size = Int(numbersInString(argument)) ?? 0 // retrieve integer from argument string
             } else if (idx != 0) {
                 // loop through array to match it to proper unit of measure
                 for measure in units.units {
+                    // following if statement makes it so that correct unit will be matched regardless of case
                     if (argument.caseInsensitiveCompare(measure) == .orderedSame || argument.caseInsensitiveCompare(measure.prefix(1)) == .orderedSame) {
-                        unit = units.units.index(of: measure) ?? 0
-                        unit += 1
+                        unit = units.units.index(of: measure) ?? 0 // make unit equal to the array index of the matching unit of measure
+                        unit += 1 // add one, so it can match what the user would have entered normally.
                     }
                 }
             }
@@ -65,21 +68,24 @@ if (CommandLine.argc < 2) {
         print("Too many arguments passed.")
     } else { // code to run if there are no spaces in argument
         if (numbersInString(CommandLine.arguments[1]).count > 0) {
-            size = Int(numbersInString(CommandLine.arguments[1])) ?? 0
+            size = Int(numbersInString(CommandLine.arguments[1])) ?? 0 // same as above, but explicity targets the second argument from the commandline
 
             // loop through unit array and match it with the proper unit of measure
             for measure in units.units {
+                // following if statement works like the one above, but compares suffixes, due to there being only one argument other than the supplied executable
                 if (CommandLine.arguments[1].suffix(2).caseInsensitiveCompare(measure) == .orderedSame || CommandLine.arguments[1].suffix(1).caseInsensitiveCompare(measure.prefix(1)) == .orderedSame) {
+                    // code below is the same as above, and works the same
                     unit = units.units.index(of: measure) ?? 0
                     unit += 1
                 }
             }
         } else {
-            print("Storage capacity is missing.")
+            print("Storage capacity is missing.") // display message if user forgets to provide a size when providing arguments
         }
     }
 }
 
+// following code will make sure calculations are performed only when all the necessary data has been provided
 if (size != 0 && unit != 0) {
     let actual = String(format: "%.2f", actualStorage(size: size, inUnit: units.units[unit-1], withUnits: units.units)) // get results and round to two places
 
