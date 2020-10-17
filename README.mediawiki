@@ -19,7 +19,7 @@ The calculations are most accurate for external devices and will not take filesy
 <dd>
 <ul>
 <li>Migrate to Swift Package Manager, now that Resources are natively supported.</li>
-<li>Use Apple&#39;s Argument Parser to make CLI stuff easier.</p>
+<li>Use Apple&#39;s <a href="https://github.com/apple/swift-argument-parser">Argument Parser</a> to make CLI stuff easier.</p>
 <li>Remove unneeded struct and minimizing JSON.</p>
 </ul>
 <p>Posted: Oct. 16, 2020</p>
