@@ -28,7 +28,7 @@ else
 	mkdir -p $(bindir)/actual_actual.resources
 
 	for file in .build/releases/actual_actual.resources/*;do \
-		install -m 755 "$(file)" "$(bindir)/actual_actual.resources/$(file)" ; \
+		install -m 755 $$file $(bindir)/actual_actual.resources/$$file ; \
 	done
 endif
 uninstall:
