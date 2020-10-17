@@ -15,9 +15,19 @@ install: build
 ifneq (, $(findstring darwin, $(SYS)))
 	test ! -d $(bindir) && mkdir -p $(bindir)
 
-	install ".build/release/rext" "$(bindir)/rext"
+	install ".build/release/actual" "$(bindir)/actual"
+	
+	test ! -d $(bindir)/actual_actual.resources && mkdir -p $(bindir)/actual_actual.resources
+
+	for file in .build/releases/actual_actual.resources/*;do;
+		install -m 755 $(file) $(bindir)/actual_actual.resources/
+	done
 else
 	install -D ".build/release/rext" "$(bindir)/rext"
+
+	for file in .build/releases/actual_actual.resources/*;do;
+		install -m 755 $(file) $(bindir)/actual_actual.resources/
+	done
 endif
 uninstall:
 	rm -rf "$(bindir)/rext"
