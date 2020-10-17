@@ -32,7 +32,7 @@ struct Actual: ParsableCommand {
             throw CalculateError.unitTooLong
         }
 
-        guard let INDEX = units.firstIndex(where: { unit.count == 1 ? unit.localizedCaseInsensiveCompare($0.prefix(1)) == .orderedSame : $0.localizedCaseInsensiveCompare(unit) == .orderedSame }) else {
+        guard let INDEX = units.firstIndex(where: { unit.count == 1 ? $0.prefix(1).caseInsensiveCompare(unit) == .orderedSame : $0.caseInsensiveCompare(unit) == .orderedSame }) else {
             throw CalculateError.invalidUnit
         }
 
