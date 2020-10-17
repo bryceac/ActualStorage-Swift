@@ -17,6 +17,9 @@ let package = Package(
             name: "actual",
             dependencies: [
                 .product(name: "ArgumentParser", package: "swift-argument-parser")
+            ],
+            resources: [
+                .copy("Resources/units.json")
             ]),
         .testTarget(
             name: "actualTests",
