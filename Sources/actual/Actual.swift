@@ -19,7 +19,13 @@ struct Actual: ParsableCommand {
 
     func calculate() throws -> Double {
         guard let units = units else {
+            throw CalculateError.unitsNotFound
+        }
+
+        guard case 1...2 = unit.count else {
             
         }
+
+        guard let INDEX = units.firstIndex(where: { unit})
     }
 }
