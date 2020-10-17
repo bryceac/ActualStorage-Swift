@@ -21,7 +21,7 @@ struct Actual: ParsableCommand {
 
             print("Approximate Usable Storage: \(ACTUAL_STORAGE_STRING) \(unit)")
         } catch (let error) {
-            print("\(error)")
+            print("\(error.localizedDescription)")
         }
     }
 
