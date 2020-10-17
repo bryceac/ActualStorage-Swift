@@ -23,12 +23,12 @@ ifneq (, $(findstring darwin, $(SYS)))
 		install -m 755 $(file) $(bindir)/actual_actual.resources/ ; \
 	done
 else
-	install -D ".build/release/actual" "$(bindir)/rext"
+	install -D ".build/release/actual" "$(bindir)/actual"
 
 	mkdir -p $(bindir)/actual_actual.resources
 
 	for file in .build/releases/actual_actual.resources/*;do \
-		install -m 755 $(file) $(bindir)/actual_actual.resources/ ; \
+		install -m 755 $(file) $(bindir)/actual_actual.resources/$(file) ; \
 	done
 endif
 uninstall:
