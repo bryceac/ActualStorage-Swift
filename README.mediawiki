@@ -88,7 +88,7 @@ Units are case insensitive, so <strong>gb</strong> will also work. This was does
 
 ===Adding Units===
 
-If you what to cover units larger than Yottabytes, the desired unit of measure can be added into the <strong>units.json</strong> in the resources directory, which is <strong>actual_actual.resources</strong> on Ubuntu.
+If you what to cover units larger than Yottabytes, the desired unit of measure can be added into the <strong>units.json</strong> file in the resources directory, which is <strong>actual_actual.resources</strong> on Ubuntu.
 
 <strong>Make sure any additional units after Yottabyte and Use the 2-letter abbreviation.</p>
 
