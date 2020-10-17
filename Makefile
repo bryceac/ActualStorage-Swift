@@ -30,7 +30,7 @@ else
 	done
 endif
 uninstall:
-	rm -rf "$(bindir)/rext"
+	rm -rf "$(bindir)/actual"
 clean:
 	rm -rf .build
 .PHONY: build install uninstall clean
