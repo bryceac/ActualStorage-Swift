@@ -1,6 +1,6 @@
 '''Name:''' Actual Storage
 
-'''Version:''' 0.1
+'''Version:''' 0.2.0
 
 '''Creator:''' Bryce Campbell
 
@@ -12,6 +12,24 @@
 
 The calculations are most accurate for external devices and will not take filesystem into, due to the formula used to make these calculations.
 
+===Version History===
+
+<dl>
+<dt style="font-weight:bold">0.2</dt>
+<dd>
+<ul>
+<li>Migrate to Swift Package Manager, now that Resources are natively supported.</li>
+<li>Use Apple&#39;s Argument Parser to make CLI stuff easier.</p>
+<li>Remove unneeded struct and minimizing JSON.</p>
+</ul>
+<p>Posted: Oct. 16, 2020</p>
+</dd>
+<dt style="font-weight:bold">0.1</dt>
+<dd>
+Initial release
+</dd>
+</dl>
+
 ===Questions===
 
 <ol>
@@ -20,8 +38,9 @@ The calculations are most accurate for external devices and will not take filesy
 <dt>'''What is so different about this port, aside from the language used to create it?'''</dt>
 <dd><p>The program has been coded so that it can be compiled on just about any operating system that supports Apple's Swift, so as Swift become more widespread, it <strong>should</strong> not need to be rewritten. However, the biggest different is how the calculations are performed.</p>
 <p>In previous iterations, I coded thing in a way that I would need to update the code to have new functions/methods if units of measure greater than Yottabytes come into existence, which would become tedious after a while.</p>
-<p>However, this version of the program makes use of a JSON file to house the various units and there is only function, which does calculations based on index of each unit in the array in the JSON file, thereby allowing scalability in the future, without needing to bother with the code.
-<p></dd>
+<p>However, this version of the program makes use of a JSON file to house the various units and there is only one function, which does calculations based on index of each unit in the array in the JSON file, thereby allowing scalability in the future, without needing to bother with the code.
+<p>
+</dd>
 </dl>
 </li>
 <li>
@@ -37,47 +56,11 @@ The calculations are most accurate for external devices and will not take filesy
 
 ===Running===
 
-Due to the use of local JSON, which prevent me from using things that make life easier (e.g. Swift Package Manager), it is highly unlikely that this program can be run without compilation.
-
-To compile, run the follow in the folder after extracting the zip or cloning the repo:
-
-<pre>
-make
-</pre>
+Now that Swift Package Manager supports resources, this can be compiled like a normal swift package, though easy install is still not possible.
 
 This will produce an executable called <strong>actual</strong> that will run on your system, and can be run via
 
-<pre>
-./actual
-</pre>
-
-in the folder.
-
-If you move the executable, make sure you keep the JSON file with it, as things work best if they are in the same folder.
-
-====Options====
-
-When running the program, you will be greeted with a prompt that asks for storage capacity and should not include any units (e.g. KB, MB, or GB), as you can only enter numerical input into the program and you can specify unit later.
-
-If you do not want go through this interactive mode and/or want to provide everything upfront, the following patterns should work:
-
-<pre>
-./actual (storage capacity) (unit)
-</pre>
-
-either single character or two letter abbreviation will work for units, and case should not matter.
-
-<pre>
-./actual (storage capacity)(unit)
-</pre>
-
-Same as above, and was implemented in case one forgets to add in a space.
-
-Two letter abbreviation is the max length and storage capacity <strong>must</strong> be a numerical value.
-
-Any more than two letter will cause problems with program logic, and I do not plan to allow full wording of each unit, though it is possible to add it in.
-
-Do not include parenthesis that are seen in patterns, as they are only used to help demonstrate the pattern better and will not work.
+This section will be updated when I figure things out with changes to Swift.
 
 ===Support===
 
