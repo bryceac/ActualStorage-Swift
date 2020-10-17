@@ -25,6 +25,8 @@ ifneq (, $(findstring darwin, $(SYS)))
 else
 	install -D ".build/release/rext" "$(bindir)/rext"
 
+	mkdir -p $(bindir)/actual_actual.resources
+
 	for file in .build/releases/actual_actual.resources/*;do;
 		install -m 755 $(file) $(bindir)/actual_actual.resources/
 	done
