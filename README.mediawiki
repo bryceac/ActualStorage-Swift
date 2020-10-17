@@ -62,7 +62,7 @@ In the cloned directory, issue the following command as root/superuser:
 
 <pre>
 make install
-<pre>
+</pre>
 
 <p>The binary will be installed in /usr/local/bin and the resources folder will be in the same directory.</p>
 
