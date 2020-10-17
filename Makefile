@@ -31,6 +31,8 @@ else
 endif
 uninstall:
 	rm -rf "$(bindir)/actual"
+
+	rm -rf "$(bindir)/actual_actual.resources"
 clean:
 	rm -rf .build
 .PHONY: build install uninstall clean
