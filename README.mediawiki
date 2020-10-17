@@ -22,7 +22,7 @@ The calculations are most accurate for external devices and will not take filesy
 <li>Use Apple&#39;s <a href="https://github.com/apple/swift-argument-parser">Argument Parser</a> to make CLI stuff easier.</p>
 <li>Remove unneeded struct and minimizing JSON.</p>
 </ul>
-<p><span style="font-weight: bold">Posted:</span> <aabr title="October">Oct.</abbr> 16, 2020</p>
+<p><span style="font-weight: bold">Posted:</span> <abbr title="October">Oct.</abbr> 16, 2020</p>
 </dd>
 <dt style="font-weight:bold">0.1</dt>
 <dd>
