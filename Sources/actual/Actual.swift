@@ -25,4 +25,8 @@ struct Actual: ParsableCommand {
         Valid Units: \(units)
         """)
     }
+
+    func calculate() throws -> Double {
+        
+    }
 }
