@@ -19,7 +19,7 @@ struct Actual: ParsableCommand {
 
             let ACTUAL_STORAGE_STRING = String(format: "%.2f", ACTUAL_STORAGE)
 
-            print("Aproximate Usable Storage: \(ACTUAL_STORAGE_STRING) \(unit)")
+            print("Approximate Usable Storage: \(ACTUAL_STORAGE_STRING) \(unit)")
         } catch (let error) {
             print("\(error)")
         }
