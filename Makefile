@@ -19,15 +19,13 @@ ifneq (, $(findstring darwin, $(SYS)))
 	
 	test ! -d $(bindir)/actual_actual.resources && mkdir -p $(bindir)/actual_actual.resources
 
-	for file in .build/releases/actual_actual.resources/*;do \
-		install -m 755 $(file) $(bindir)/actual_actual.resources/ ; \
-	done
+	rsync -zavrh --progress ".build/release/actual_actual.resources" "$(bindir)/actual_actual.resources"
 else
 	install -D ".build/release/actual" "$(bindir)/actual"
 
 	mkdir -p $(bindir)/actual_actual.resources
 
-	install -D ".build/release/actual_actual.resources/*" -t "$(bindir)/actual_actual.resources"
+	rsync -zavrh --progress ".build/release/actual_actual.resources" "$(bindir)/actual_actual.resources"
 endif
 uninstall:
 	rm -rf "$(bindir)/actual"
