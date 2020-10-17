@@ -14,5 +14,15 @@ struct Actual: ParsableCommand {
     }
 
     func run() {
+        guard let units = units else {
+            fatalError("Could not retrieve list of units.")
+        }
+
+        print("""
+        Storage capacity: \(size)
+        Storage unit measurent: \(unit)
+
+        Valid Units: \(units)
+        """)
     }
 }
