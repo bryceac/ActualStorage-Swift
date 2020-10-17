@@ -22,7 +22,7 @@ The calculations are most accurate for external devices and will not take filesy
 <li>Use Apple&#39;s <a href="https://github.com/apple/swift-argument-parser">Argument Parser</a> to make CLI stuff easier.</p>
 <li>Remove unneeded struct and minimizing JSON.</p>
 </ul>
-<p><span style="font-weight: bold">Posted:</span> Oct. 16, 2020</p>
+<p><span style="font-weight: bold">Posted:</span> <aabr title="October">Oct.</abbr> 16, 2020</p>
 </dd>
 <dt style="font-weight:bold">0.1</dt>
 <dd>
@@ -54,13 +54,43 @@ Initial release
 </li>
 </ol>
 
-===Running===
+===Installation===
 
-Now that Swift Package Manager supports resources, this can be compiled like a normal swift package, though easy install is still not possible.
+To install the application, download the zip or clone this repository.
 
-This will produce an executable called <strong>actual</strong> that will run on your system, and can be run via
+In the cloned directory, issue the following command as root/superuser:
 
-This section will be updated when I figure things out with changes to Swift.
+<pre>
+make install
+<pre>
+
+<p>The binary will be installed in /usr/local/bin and the resources folder will be in the same directory.</p>
+
+<p>To ensure things go smoothly, make sure you have rsync installed on your system.</p>
+
+===Uninstallation===
+
+To uninstall the binary and remove its resources, if installed via source, run the following as root/superuser:
+
+<pre>
+make uninstall
+</pre>
+
+===Usage===
+
+To use the program, call it and tell it the known storage capacity like this:
+
+<pre>
+actual 250 GB
+</pre>
+
+Units are case insensitive, so <strong>gb</strong> will also work. This was does because the program cannot handle any storage capacities below the Kilobyte range, due to the code used to allow scalability, and will never support hectobytes or smaller.
+
+===Adding Units===
+
+If you what to cover units larger than Yottabytes, the desired unit of measure can be added into the <strong>units.json</strong> in the resources directory, which is <strong>actual_actual.resources</strong> on Ubuntu.
+
+<strong>Make sure any additional units after YottaByte and Use the 2-letter abbreviation.</p>
 
 ===Support===
 
