@@ -15,7 +15,7 @@ struct Actual: ParsableCommand {
 
     func run() {
         do {
-            let ACTUAL_STORAGE = try calculate
+            let ACTUAL_STORAGE = try calculate()
 
             print("Usable storage is: \(ACTUAL_STORAGE) \(unit)")
         } catch (let error) {
