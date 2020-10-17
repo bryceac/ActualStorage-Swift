@@ -1,1 +1,1 @@
-print("Hello, world!")
+Actual.main()
