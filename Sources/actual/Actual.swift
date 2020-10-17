@@ -23,9 +23,13 @@ struct Actual: ParsableCommand {
         }
 
         guard case 1...2 = unit.count else {
-            
+            throw CalculateError.unitTooLong
         }
 
-        guard let INDEX = units.firstIndex(where: { unit})
+        guard let INDEX = units.firstIndex(where: { unit.count == 1 ? $0.prefix(1).localizedCaseInsensiveCompare(unit) == .orderedSame || $0.localizedCaseInsensiveCompare(unit) == .orderedSame }) else {
+            throw CalculateError.invalidUnit
+        }
+
+        return (Double(size)*pow(Double(1_000), Double(INDEX+1)))/pow(Double(1_024), Double(INDEX+1))
     }
 }
